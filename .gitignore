@@ -2,4 +2,6 @@ __pycache__/
 *.pyc
 db_blog
 *.sqlite3
+db_firstwebpage
+db_myproject
 .idea/
