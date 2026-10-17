@@ -1,6 +1,5 @@
 __pycache__/
 *.pyc
-db_firstwebpage
-db_myproject
-db.sqlite3
+db_blog
+*.sqlite3
 .idea/

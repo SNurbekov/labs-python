@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Article
+from .models import Book
 
 
 def archive(request):
-    return render(request, 'archive.html', {"posts": Article.objects.all()})
+    return render(request, 'archive.html', {"books": Book.objects.all()})
