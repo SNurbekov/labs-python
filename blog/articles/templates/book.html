@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ book.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <a href="{% url 'archive' %}" class="all-articles">Все книги</a>
+    </div>
+    <div class="article">
+        <h1>{{ book.title }}</h1>
+        <div class="article-info">
+            <div class="article-author">{{ book.author }}</div>
+            <div class="article-created-date">{{ book.genre }}</div>
+        </div>
+        <p class="article-text">
+            Жанр: {{ book.genre }}<br>
+            Залоговая стоимость: {{ book.deposit }} руб.<br>
+            Стоимость проката: {{ book.rent_price }} руб.
+        </p>
+    </div>
+</body>
+</html>
