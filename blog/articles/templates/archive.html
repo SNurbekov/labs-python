@@ -23,10 +23,13 @@
             <h2 class="post-title">
                 <a href="{% url 'get_book' book.id %}">{{ book.title }}</a>
             </h2>
+<<<<<<< HEAD
 
             <!-- Кнопка для сворачивания -->
             <button class="fold-button">свернуть</button>
 
+=======
+>>>>>>> 39a98cb4385bc871679af0fc8df3d9571af96ae3
             <div class="article-info">
                 <div class="article-author">{{ book.author }}</div>
                 <div class="article-created-date">{{ book.genre }}</div>
@@ -35,8 +38,11 @@
         </div>
         {% endfor %}
     </div>
+<<<<<<< HEAD
 
     <!-- Подключаем наш JS-скрипт -->
     <script src="{% static 'js/fold-post.js' %}"></script>
+=======
+>>>>>>> 39a98cb4385bc871679af0fc8df3d9571af96ae3
 </body>
 </html>

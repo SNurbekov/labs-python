@@ -43,6 +43,7 @@ body {
 
 .header .all-articles:hover {
     text-decoration: underline;
+<<<<<<< HEAD
 }
 
 /* Стили для кнопки сворачивания */
@@ -60,4 +61,6 @@ body {
 .one-post.folded .article-info,
 .one-post.folded .article-text {
     display: none;
+=======
+>>>>>>> 39a98cb4385bc871679af0fc8df3d9571af96ae3
 }
