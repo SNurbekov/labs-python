@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог книг</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="archive">
+
+    <div class="header" style="text-align: right; padding: 10px;">
+        {% if user.is_authenticated %}
+            <span style="color: white;">Привет, {{ user.username }}!</span>
+            <a href="{% url 'logout' %}" class="all-articles" style="margin-left: 15px;">Выйти</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="all-articles">Войти</a>
+            <a href="{% url 'register' %}" class="all-articles" style="margin-left: 15px;">Регистрация</a>
+        {% endif %}
+    </div>
+
+    <div class="archive">
+        {% for book in books %}
+        <div class="one-post">
+            <h2 class="post-title">
+                <a href="{% url 'get_book' book.id %}">{{ book.title }}</a>
+            </h2>
+
+            <!-- Кнопка для сворачивания -->
+            <button class="fold-button">свернуть</button>
+
+            <div class="article-info">
+                <div class="article-author">{{ book.author }}</div>
+                <div class="article-created-date">{{ book.genre }}</div>
+            </div>
+            <p class="article-text">{{ book.get_excerpt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Подключаем наш JS-скрипт -->
+    <script src="{% static 'js/fold-post.js' %}"></script>
+</body>
+</html>

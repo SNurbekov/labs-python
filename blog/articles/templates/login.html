@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <a href="{% url 'archive' %}" class="all-articles">Все книги</a>
+    </div>
+    <div class="article">
+        <h1>Вход в систему</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label>Логин:</label><br>
+                <input type="text" name="username">
+            </p>
+            <p>
+                <label>Пароль:</label><br>
+                <input type="password" name="password">
+            </p>
+            <input type="submit" value="Войти">
+        </form>
+        {% if error %}
+            <p style="color: #ffcccc;">{{ error }}</p>
+        {% endif %}
+        <p style="margin-top: 20px;">Нет аккаунта? <a href="{% url 'register' %}" style="color: white;">Зарегистрироваться</a></p>
+    </div>
+</body>
+</html>

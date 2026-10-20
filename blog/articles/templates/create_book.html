@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить книгу</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <a href="{% url 'archive' %}" class="all-articles">Все книги</a>
+    </div>
+    <div class="article">
+        <h1>Добавить новую книгу</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <p>
+                <label>Название:</label><br>
+                <input type="text" name="title" value="{{ form.title }}" placeholder="Введите название">
+            </p>
+            <p>
+                <label>Автор:</label><br>
+                <input type="text" name="author" value="{{ form.author }}" placeholder="Введите автора">
+            </p>
+            <p>
+                <label>Жанр:</label><br>
+                <input type="text" name="genre" value="{{ form.genre }}" placeholder="Введите жанр">
+            </p>
+            <p>
+                <label>Залог (руб.):</label><br>
+                <input type="number" name="deposit" value="{{ form.deposit }}">
+            </p>
+            <p>
+                <label>Стоимость проката (руб.):</label><br>
+                <input type="number" name="rent_price" value="{{ form.rent_price }}">
+            </p>
+            <input type="submit" value="Сохранить">
+        </form>
+        {% if form.errors %}
+            <p style="color: red;">{{ form.errors }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

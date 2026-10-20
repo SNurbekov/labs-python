@@ -1,0 +1,63 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+}
+
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-title a {
+    color: #ffffff;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+.header {
+    text-align: right;
+    padding: 10px 20px 0 0;
+}
+
+.header .all-articles {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header .all-articles:hover {
+    text-decoration: underline;
+}
+
+/* Стили для кнопки сворачивания */
+.fold-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+    margin-top: -30px;
+}
+
+/* Когда у .one-post есть класс folded, скрываем описание и инфо */
+.one-post.folded .article-info,
+.one-post.folded .article-text {
+    display: none;
+}
